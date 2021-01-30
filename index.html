@@ -1,5 +1,5 @@
 
-/* 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,11 +72,12 @@
             
             <div class="input-group f-class">
                 <div>
-                    <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <label id="ticket-price1" for="">Economy ($100)</label>
+                    <input id="ticket-Count1" class="inp-style inp-width" type="number" name="" value="1">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                    <button id="increase1" class="btn btn-plus" type="button">+</button>
+                    <button id="decrease1" class="btn btn-minus" type="button">-</button>
                 </div>
             </div>
             <div class="calculations">
@@ -119,16 +120,34 @@
         const ticketNewCount = ticketCount + 1;
         ticketInput.value = ticketNewCount;
         const ticketTotal = ticketNewCount * 150;
-        
         document.getElementById("ticket-price").innerText = '$'+ ticketTotal;
-
-        
-        
+        })
+                                
+        document.getElementById('decrease').addEventListener('click', function () {
+        const ticketInput = document.getElementById('ticket-Count');
+        const ticketCount = parseInt(ticketInput.value);
+        const ticketNewCount = ticketCount - 1;
+        ticketInput.value = ticketNewCount;
+        const ticketTotal = ticketNewCount * 150;
+        document.getElementById('ticket-price').innerText ='$'+ ticketTotal;    
+        })
+        document.getElementById('increase1').addEventListener('click', function () {
+        const ticketInput1 = document.getElementById('ticket-Count1');
+        const ticketCount1 = parseInt(ticketInput1.value);
+        const ticketNewCount1 = ticketCount1 + 1;
+        ticketInput1.value = ticketNewCount1;
+        const ticketTotal1 = ticketNewCount1 * 100;
+        document.getElementById("ticket-price1").innerText = '$'+ ticketTotal1;
+        })
+        document.getElementById('decrease1').addEventListener('click', function () {
+        const ticketInput1 = document.getElementById('ticket-Count1');
+        const ticketCount1 = parseInt(ticketInput1.value);
+        const ticketNewCount1 = ticketCount1 - 1;
+        ticketInput1.value = ticketNewCount1;
+        const ticketTotal1 = ticketNewCount1 * 100;
+        document.getElementById("ticket-price1").innerText = '$'+ ticketTotal1;
         })
         
-
-
-
 
 
 
@@ -142,4 +161,4 @@
 
 </body>
 
-</html> */
+</html>
